@@ -6,7 +6,6 @@ public class SnakeandLadder
 	public static void main(String[] args)
 	{
 		int position=0;
-	//	int [] board=new int [101];
 		while(position==100) 
 		{
 			int die_value=(int)Math.floor((Math.random()*10 +1 )% 6);
@@ -16,8 +15,15 @@ public class SnakeandLadder
 			case 0:
 					break;
 			case 1:
-					position=position+die_value;
-					break;
+					if(position+die_value<=100) 
+					{
+						position=position+die_value;
+						break;
+					}
+					else
+					{
+						break;
+					}
 			case 2:
 					if(position>die_value && position>0) 
 					{
